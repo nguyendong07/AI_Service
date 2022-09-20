@@ -18,7 +18,7 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-@app.post("/uploadfile/test/")
+@app.post("/uploadfile/compare/")
 async def create_upload_file(file: UploadFile = File(), file2: UploadFile = File()):
     with open("destination.png", "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
